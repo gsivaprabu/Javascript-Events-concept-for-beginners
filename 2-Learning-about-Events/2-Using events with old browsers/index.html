@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>JavaScript Events</title>
     <link rel="stylesheet" href="style.css">
+    <script src="jquery-1.9.1.min.js"></script>
 </head>
 
 <body>
@@ -20,12 +21,21 @@
         <li><img src="images/red.gif" alt="red"></li>
     </ul>
     <script>
-    document.getElementById('yellow').onclick = function() {
-        alert('Click Yellow');
+    if (window.addEventListener) {
+        document.getElementById('yellow').addEventListener('click', function() {
+            alert('Clicked on yellow');
+            console.log('addEventListener');
+        })
+    } else {
+        document.getElementById('yellow').attachEvent('click', function() {
+            alert('Clicked Yellow');
+            console.log('attachEvent');
+        })
     }
-    document.getElementById('pink').addEventListener('click', function() {
-        alert('clicked on pink');
-    }, false);
+
+    $('#pink').on('click', function() {
+        alert("Clicked on Pink")
+    });
     </script>
 </body>
 

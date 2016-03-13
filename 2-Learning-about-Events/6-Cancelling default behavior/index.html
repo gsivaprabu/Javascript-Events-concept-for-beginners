@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <ul id="grid">
+        <li>
+            <a href="http:\\villageprogrammer.com"><img src="images/ylw.gif" alt="yellow"></a>
+        </li>
+        <li>
+            <a href="http:\\villageprogrammer.com"><img src="images/org.gif" alt="orange"></a>
+        </li>
+        <li>
+            <a href="http:\\villageprogrammer.com"><img src="images/ppl.gif" alt="purple"></a>
+        </li>
+        <li>
+            <a href="http:\\villageprogrammer.com"><img src="images/blu.gif" alt="blue"></a>
+        </li>
+        <li>
+            <a href="http:\\villageprogrammer.com"><img src="images/pnk.gif" alt="pink" id="pink"></a>
+        </li>
+        <li>
+            <a href="http:\\villageprogrammer.com"><img src="images/grn.gif" alt="green"></a>
+        </li>
+        <li>
+            <a href="http:\\villageprogrammer.com"><img src="images/ygr.gif" alt="ygreen"></a>
+        </li>
+        <li>
+            <a href="http:\\villageprogrammer.com"><img src="images/gry.gif" alt="gray"></a>
+        </li>
+        <li>
+            <a href="http:\\villageprogrammer.com"><img src="images/red.gif" alt="red" id="red"></a>
+        </li>
+    </ul>
+    <script>
+    document.getElementById('grid').addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log("");
+        console.log("Click inside the <ul>");
+        console.log(e);
+        console.log(e.toElement.alt);
+    }, false);
+
+    document.getElementById('pink').addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log("");
+        console.log(e.toElement.alt);
+        console.log(e);
+        e.stopPropagation();
+    }, false);
+    </script>
+</body>
+
+</html>
